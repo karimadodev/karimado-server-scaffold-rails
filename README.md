@@ -1,1 +1,1 @@
-# Karimado + Rails
+# Karimado Server Scaffold + Rails
