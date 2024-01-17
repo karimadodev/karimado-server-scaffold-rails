@@ -1,3 +1,14 @@
+GIT
+  remote: https://github.com/karimadodev/karimado-server-packs-rails.git
+  revision: b9e1f0f892ca54e7077a9568db6237f65ff1a257
+  glob: karimado/*.gemspec
+  specs:
+    karimado (0.1.0)
+      bcrypt (~> 3.1.7)
+      discard
+      jwt
+      rails (>= 7.1.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -79,13 +90,19 @@ GEM
     bcrypt (3.1.20)
     bigdecimal (3.1.5)
     builder (3.2.4)
-    concurrent-ruby (1.2.2)
+    concurrent-ruby (1.2.3)
     connection_pool (2.4.1)
     crass (1.0.6)
     date (3.3.4)
     debug (1.9.1)
       irb (~> 1.10)
       reline (>= 0.3.8)
+    discard (1.3.0)
+      activerecord (>= 4.2, < 8)
+    dotenv (2.8.1)
+    dotenv-rails (2.8.1)
+      dotenv (= 2.8.1)
+      railties (>= 3.2)
     drb (2.2.0)
       ruby2_keywords
     erubi (1.12.0)
@@ -94,9 +111,10 @@ GEM
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     io-console (0.7.1)
-    irb (1.11.0)
+    irb (1.11.1)
       rdoc
-      reline (>= 0.3.8)
+      reline (>= 0.4.2)
+    jwt (2.7.1)
     loofah (2.22.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -107,34 +125,24 @@ GEM
       net-smtp
     marcel (1.0.2)
     mini_mime (1.1.5)
-    minitest (5.20.0)
+    minitest (5.21.1)
     mutex_m (0.2.0)
-    net-imap (0.4.9)
+    net-imap (0.4.9.1)
       date
       net-protocol
     net-pop (0.1.2)
       net-protocol
     net-protocol (0.2.2)
       timeout
-    net-smtp (0.4.0)
+    net-smtp (0.4.0.1)
       net-protocol
     nio4r (2.7.0)
-    nokogiri (1.16.0-aarch64-linux)
-      racc (~> 1.4)
-    nokogiri (1.16.0-arm-linux)
-      racc (~> 1.4)
-    nokogiri (1.16.0-arm64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.16.0-x86-linux)
-      racc (~> 1.4)
-    nokogiri (1.16.0-x86_64-darwin)
-      racc (~> 1.4)
     nokogiri (1.16.0-x86_64-linux)
       racc (~> 1.4)
     pg (1.5.4)
     psych (5.1.2)
       stringio
-    puma (6.4.0)
+    puma (6.4.2)
       nio4r (~> 2.0)
     racc (1.7.3)
     rack (3.0.8)
@@ -177,7 +185,7 @@ GEM
     rake (13.1.0)
     rdoc (6.6.2)
       psych (>= 4.0.0)
-    reline (0.4.1)
+    reline (0.4.2)
       io-console (~> 0.5)
     ruby2_keywords (0.0.5)
     stringio (3.1.0)
@@ -192,16 +200,12 @@ GEM
     zeitwerk (2.6.12)
 
 PLATFORMS
-  aarch64-linux
-  arm-linux
-  arm64-darwin
-  x86-linux
-  x86_64-darwin
   x86_64-linux
 
 DEPENDENCIES
-  bcrypt (~> 3.1.7)
   debug
+  dotenv-rails
+  karimado!
   pg (~> 1.1)
   puma (>= 5.0)
   rails (~> 7.1.2)
