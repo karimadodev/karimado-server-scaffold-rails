@@ -11,7 +11,7 @@ RUN groupadd --gid ${GID} karimado \
   && useradd --uid ${UID} --gid ${GID} --shell /bin/bash --create-home karimado
 
 USER karimado:karimado
-WORKDIR /home/karimado/server
+WORKDIR /home/karimado/workspace
 
 RUN gem install bundler -v 2.5.3
 COPY --chown=karimado:karimado Gemfile .
@@ -20,5 +20,4 @@ RUN bundle install
 
 COPY --chown=karimado:karimado . .
 
-EXPOSE 3000
-CMD ["./bin/rails", "server"]
+CMD ["./bin/rails", "about"]

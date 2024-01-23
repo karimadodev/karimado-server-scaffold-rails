@@ -1,6 +1,6 @@
 version: "3.9"
 
-x-app: &x-app
+x-rubydev: &x-rubydev
   build:
     context: .
     args:
@@ -8,7 +8,7 @@ x-app: &x-app
       - "GID=${GID:-1000}"
     network: host
   volumes:
-    - .:/home/karimado/server
+    - .:/home/karimado/workspace
   depends_on:
     - postgres
     - redis
@@ -32,10 +32,16 @@ services:
     volumes:
       - redisdata:/data
 
+  rubydev:
+    <<: *x-rubydev
+    command: sleep infinity
+    stop_signal: SIGKILL
+    profiles: ["rubydev"]
+
   puma:
-    <<: *x-app
-    command: ./bin/rails server -b 0.0.0.0
-    profiles: ["app"]
+    <<: *x-rubydev
+    command: ./bin/rails server -b 0.0.0.0 -p 3000
+    profiles: ["rubydev"]
 
 volumes:
   pgdata:
