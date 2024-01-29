@@ -32,15 +32,15 @@ services:
     volumes:
       - redisdata:/data
 
+  puma:
+    <<: *x-rubydev
+    command: ./bin/rails server -b 0.0.0.0 -p 3000
+    profiles: ["rubydev"]
+
   rubydev:
     <<: *x-rubydev
     command: sleep infinity
     stop_signal: SIGKILL
-    profiles: ["rubydev"]
-
-  puma:
-    <<: *x-rubydev
-    command: ./bin/rails server -b 0.0.0.0 -p 3000
     profiles: ["rubydev"]
 
 volumes:

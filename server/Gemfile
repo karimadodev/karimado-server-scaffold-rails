@@ -26,7 +26,7 @@ group :development, :test do
   gem "debug", platforms: %i[ mri windows ]
 
   # Shim to load environment variables from .env into ENV in development.
-  gem 'dotenv-rails'
+  gem "dotenv-rails"
 end
 
 group :development do
