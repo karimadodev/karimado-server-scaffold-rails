@@ -1,0 +1,20 @@
+require:
+  - standard
+  - standard-custom
+  - standard-performance
+  - standard-rails
+  - rubocop-performance
+  - rubocop-rails
+
+inherit_gem:
+  standard: config/base.yml
+  standard-custom: config/base.yml
+  standard-performance: config/base.yml
+  standard-rails: config/base.yml
+
+AllCops:
+  NewCops: enable
+
+Rails/Output:
+  Exclude:
+    - db/seeds.rb

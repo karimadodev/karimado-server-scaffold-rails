@@ -18,7 +18,7 @@ require "action_view/railtie"
 Bundler.require(*Rails.groups)
 
 # Load dotenv only in development or test environment.
-if ['development', 'test'].include?(ENV['RAILS_ENV'])
+if ["development", "test"].include?(ENV["RAILS_ENV"])
   Dotenv::Railtie.load
 end
 
@@ -30,7 +30,7 @@ module KarimadoServer
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
     # Common ones are `templates`, `generators`, or `middleware`, for example.
-    config.autoload_lib(ignore: %w(assets tasks))
+    config.autoload_lib(ignore: %w[assets tasks])
 
     # Configuration for the application, engines, and railties goes here.
     #

@@ -29,11 +29,12 @@
 
 
     ```sh
-    $ docker compose exec rubydev bin/rails db:prepare
+    $ docker compose exec rubydev bin/rails db:setup
     Created database 'karimado_development'
+    Created record Karimado::User {uid: 'karimado', password: 'karimado'}
     ```
 
-    > You can also use `bin/rails db:prepare` directly if you have set up the
+    > You can also use `bin/rails db:setup` directly if you have set up the
     > ruby development environment on your local machine.
 
 4. Visit http://localhost:3000 in your favorite browser.

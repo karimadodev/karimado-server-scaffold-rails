@@ -10,6 +10,5 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-user = Karimado::User.find_or_create_by!(uid: 'karimado')
-user.update!(password: 'karimado')
+Karimado::User.create_with(password: "karimado").find_or_create_by!(uid: "karimado")
 puts "Created record Karimado::User {uid: 'karimado', password: 'karimado'}"
