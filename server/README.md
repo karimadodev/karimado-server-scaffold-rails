@@ -17,8 +17,8 @@
    $ COMPOSE_PROFILES="*" docker compose up --build
    ...
    [+] Running 4/4
-   ✔ Container karimado-server-scaffold-rails-redis-1     Created                                                                                         0.0s
    ✔ Container karimado-server-scaffold-rails-postgres-1  Created                                                                                         0.0s
+   ✔ Container karimado-server-scaffold-rails-redis-1     Created                                                                                         0.0s
    ✔ Container karimado-server-scaffold-rails-puma-1      Created
    ✔ Container karimado-server-scaffold-rails-rubydev-1   Created                                                                                         0.0s
    ...

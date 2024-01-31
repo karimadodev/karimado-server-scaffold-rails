@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-set -eou pipefail
-IFS=$'\n\t'
+#!/usr/bin/env ruby
 
-docker compose up --build
+system "bin/rails server -b 0.0.0.0 -p 3000"
