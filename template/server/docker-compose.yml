@@ -14,6 +14,8 @@ x-rubydev: &x-rubydev
     - redis
   network_mode: host
 
+name: karimado-server-rails
+
 services:
   postgres:
     image: postgres:16.1
@@ -35,13 +37,11 @@ services:
   puma:
     <<: *x-rubydev
     command: ./bin/rails server -b 0.0.0.0 -p 3000
-    profiles: ['rubydev']
 
   rubydev:
     <<: *x-rubydev
     command: sleep infinity
     stop_signal: SIGKILL
-    profiles: ['rubydev']
 
 volumes:
   pgdata:

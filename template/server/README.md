@@ -1,4 +1,4 @@
-# Karimado Server Scaffold + Rails
+# Karimado Server + Rails
 
 ## Development
 
@@ -14,13 +14,13 @@
    #         puma - web server
    #      rubydev - ruby development environment container
    #
-   $ COMPOSE_PROFILES="*" docker compose up --build
+   $ docker compose up --build
    ...
    [+] Running 4/4
-   ✔ Container karimado-server-scaffold-rails-postgres-1  Created                                                                                         0.0s
-   ✔ Container karimado-server-scaffold-rails-redis-1     Created                                                                                         0.0s
-   ✔ Container karimado-server-scaffold-rails-puma-1      Created
-   ✔ Container karimado-server-scaffold-rails-rubydev-1   Created                                                                                         0.0s
+   ✔ Container karimado-server-rails-redis-1     Created
+   ✔ Container karimado-server-rails-postgres-1  Created
+   ✔ Container karimado-server-rails-rubydev-1   Created
+   ✔ Container karimado-server-rails-puma-1      Created
    ...
    ```
 
@@ -41,4 +41,4 @@
 
 ## License
 
-Licensed under the [GPLv3 License](./LICENSE).
+Licensed under the [GPL-3.0-only License](./LICENSE).
