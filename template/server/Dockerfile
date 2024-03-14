@@ -20,4 +20,4 @@ RUN bundle install
 
 COPY --chown=karimado:karimado . .
 
-CMD ["./bin/rails", "about"]
+CMD ["rails", "about"]
