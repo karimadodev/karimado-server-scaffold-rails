@@ -1,7 +1,15 @@
 [[tasks]]
-name = "dcsh"
-command = "docker compose exec rubydev bash"
-
-[[tasks]]
 name = "dcupb"
 command = "docker compose up --build"
+description = "KarimadoServer: Launch a preconfigured Rails development container"
+
+[[tasks]]
+name = "dcsh"
+command = """\
+  {{#if CLI_ARGS}}\
+    docker compose exec rubydev {{CLI_ARGS}}\
+  {{else}}\
+    docker compose exec rubydev bash\
+  {{/if}}\
+  """
+description = "KarimadoServer: Exec a command in the Rails development container"
