@@ -5,11 +5,5 @@ description = "KarimadoServer: Launch a preconfigured Rails development containe
 
 [[tasks]]
 name = "dcsh"
-command = """\
-  {{#if CLI_ARGS}}\
-    docker compose exec rubydev {{CLI_ARGS}}\
-  {{else}}\
-    docker compose exec rubydev bash\
-  {{/if}}\
-  """
+command = "docker compose exec rubydev {{ getvar_or_default 'CLI_ARGS' 'bash' }}"
 description = "KarimadoServer: Exec a command in the Rails development container"
